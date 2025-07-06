@@ -192,13 +192,14 @@ Install Rancher:
 ```bash
 helm install rancher rancher-stable/rancher \
   --namespace cattle-system \
-  --set hostname=rancher.<yourdomaion>.pro \ #🫲dont forget to change the hostname here
+  --set hostname=rancher.<yourdomain>.pro \
   --set ingress.ingressClassName=nginx \
   --set replicas=1 \
   --set certmanager.install=false \
   --set ingress.extraAnnotations."cert-manager\.io/cluster-issuer"=letsencrypt-prod \
   --set-string ingress.extraAnnotations."cert-manager\.io/issuer"=null \
   --set-string ingress.extraAnnotations."cert-manager\.io/issuer-kind"=null
+
 ```
 
 ---
